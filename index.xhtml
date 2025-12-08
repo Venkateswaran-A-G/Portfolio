@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venkateswaran A G | XHTML Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+    <nav>
+        <a onclick="triggerSlide('home')">Home</a>
+        <a onclick="triggerSlide('about')">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="intro-container" id="intro-wrapper">
+        
+        <div id="hero-section" class="slide-panel">
+            <img src="profile.png" alt="Profile Photo" class="profile-pic" />
+            <h1>Venkateswaran A G</h1>
+            <div class="hero-subtitle">Aspiring AI Engineer</div>
+            <p style="color: #aaa; max-width: 700px; text-align:center;">
+                Building the Future, One Line of Code at a Time | CSE 2nd year undergrad | Tech Enthusiast
+            </p>
+            <button class="slide-btn" onclick="triggerSlide('about')">&rarr;</button>
+        </div>
+
+        <div id="about-section" class="slide-panel">
+            <h2 class="section-title">About Me</h2>
+            <div class="glass-card">
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    I’m pursuing a <strong>B.E. in Computer Science and Engineering</strong> at New Horizon College of Engineering, Bangalore. 
+                    My focus is on Artificial Intelligence, Machine Learning, and Data-Driven Development. 
+                    I hold a <strong>3rd Dan Black Belt in Taekwondo</strong>, bringing discipline and precision to my code.
+                </p>
+                <div style="margin-top: 20px;">
+                    <span style="color:var(--neon-cyan)">Skills:</span> Python, TensorFlow, OpenCV, Git, Data Structures
+                </div>
+            </div>
+            <div style="margin-top: 20px; color: #666; font-size: 0.9rem;">
+                Scroll Down for Projects &darr;
+            </div>
+        </div>
+
+    </div>
+
+    <div id="main-content">
+        <section id="projects" class="content-block">
+            <h2 class="section-title">Flagship Project</h2>
+            <div class="glass-card" style="border-color: var(--neon-purple); max-width: 1100px;">
+                <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <img src="5.png" style="width:100%; border-radius:10px; border:1px solid #333;" alt="Project Image" />
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Chitragupta: The AI Auditor</h3>
+                        <p style="color:var(--text-muted); margin-bottom: 20px;">
+                            An autonomous multi-agent system for ethical red-teaming of LLMs using Google ADK and Gemini API. 
+                            It acts as an auditor to ensure AI safety.
+                        </p>
+                        <a href="https://github.com/Venkateswaran-A-G/Chitragupta-The-AI-Auditor" target="_blank" class="btn">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-block">
+            <h2 class="section-title">Mini Projects</h2>
+            <div class="slider-wrapper">
+                <div class="mini-card">
+                    <img src="1.png" class="mini-img" alt="Game" />
+                    <div class="mini-content">
+                        <h3>Hand Cricket Game</h3>
+                        <p style="color:#888; font-size:0.9rem; margin:10px 0;">Text-based game with CPU logic.</p>
+                        <a href="https://github.com/Venkateswaran-A-G/Hand-Cricket-Game" target="_blank" style="color:var(--neon-cyan)">View GitHub &rarr;</a>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <img src="4.png" class="mini-img" alt="Expense" />
+                    <div class="mini-content">
+                        <h3>Expense CLI</h3>
+                        <p style="color:#888; font-size:0.9rem; margin:10px 0;">Track daily expenses in terminal.</p>
+                        <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/tree/main/ExpenseManagementCLI" target="_blank" style="color:var(--neon-cyan)">View GitHub &rarr;</a>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <img src="3.png" class="mini-img" alt="Finance" />
+                    <div class="mini-content">
+                        <h3>Finance Assistant</h3>
+                        <p style="color:#888; font-size:0.9rem; margin:10px 0;">Savings calculator and budgeter.</p>
+                        <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/blob/main/PersonalFinanceAssitant.py" target="_blank" style="color:var(--neon-cyan)">View GitHub &rarr;</a>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <img src="2.png" class="mini-img" alt="Student" />
+                    <div class="mini-content">
+                        <h3>Student Mgmt</h3>
+                        <p style="color:#888; font-size:0.9rem; margin:10px 0;">CRUD system for records.</p>
+                        <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/tree/main/StudentManagementCLI" target="_blank" style="color:var(--neon-cyan)">View GitHub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certs" class="content-block">
+            <h2 class="section-title">Certifications</h2>
+            <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+                <div class="cert-item">
+                    <div>
+                        <div class="cert-title">Git Training</div>
+                        <div class="cert-meta">Spoken Tutorial Project, IIT Bombay</div>
+                        <div class="cert-meta">Date: 12 November 2025</div>
+                    </div>
+                    <div class="cert-score">76.67%</div>
+                </div>
+                <div class="cert-item">
+                    <div>
+                        <div class="cert-title">Learn Python 3 Course</div>
+                        <div class="cert-meta">Codecademy</div>
+                        <div class="cert-meta">Date: October 2, 2025</div>
+                    </div>
+                    <div class="cert-score">COMPLETED</div>
+                </div>
+                <div class="cert-item">
+                    <div>
+                        <div class="cert-title">3rd Dan Black Belt</div>
+                        <div class="cert-meta">Taekwondo Federation</div>
+                    </div>
+                    <div class="cert-score">RANKED</div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <h3>Let's Connect</h3>
+            <p style="margin: 20px 0;">
+                <a href="mailto:venkateswaranag20@gmail.com" style="margin:0 15px; color:#fff;">Email Me</a>
+                <a href="https://github.com/Venkateswaran-A-G" target="_blank" style="margin:0 15px; color:#fff;">GitHub</a>
+                <a href="https://www.linkedin.com/in/venkateswaran-a-g-a2a18a339" target="_blank" style="margin:0 15px; color:#fff;">LinkedIn</a>
+            </p>
+            <p style="font-size:0.8rem;">&copy; 2025 Venkateswaran A G</p>
+        </footer>
+    </div>
+
+</body>
+</html>
