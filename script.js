@@ -1,45 +1,24 @@
-// 1. HORIZONTAL SLIDE FUNCTION
-const wrapper = document.getElementById('intro-wrapper');
-
-function triggerSlide(target) {
-    if (target === 'about') {
-        wrapper.classList.add('slide-active');
-    } else if (target === 'home') {
-        wrapper.classList.remove('slide-active');
-        window.scrollTo(0, 0); // Return to top
-    }
-}
-
-// 2. VERTICAL SCROLL ANIMATION FOR PROJECTS/CERTS
 document.addEventListener("DOMContentLoaded", function() {
-    const contentBlocks = document.querySelectorAll(".content-block");
+    // Select all elements with the 'reveal' class
+    const reveals = document.querySelectorAll(".reveal");
 
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
-        const elementVisible = 100;
+        const elementVisible = 100; // How many pixels from bottom before showing
 
-        contentBlocks.forEach((block) => {
-            const elementTop = block.getBoundingClientRect().top;
+        reveals.forEach((reveal) => {
+            const elementTop = reveal.getBoundingClientRect().top;
+            
+            // If the element is within the viewport, add 'active'
             if (elementTop < windowHeight - elementVisible) {
-                block.classList.add("active");
+                reveal.classList.add("active");
             }
         });
     };
 
+    // Listen to scroll event
     window.addEventListener("scroll", revealOnScroll);
-    // Initial check
+    
+    // Trigger once on load to show elements already on screen
     revealOnScroll();
-});
-
-// 3. AUTO-TRIGGER SLIDE ON SCROLL DOWN (UX enhancement)
-let isSlid = false;
-window.addEventListener('wheel', (e) => {
-    // Only trigger if we are at the very top of the page
-    if (!isSlid && e.deltaY > 0 && window.scrollY < 50) {
-        triggerSlide('about');
-        isSlid = true;
-    } else if (isSlid && e.deltaY < 0 && window.scrollY < 50) {
-        triggerSlide('home');
-        isSlid = false;
-    }
 });
