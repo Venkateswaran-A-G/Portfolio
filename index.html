@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venkateswaran A G | Aspiring AI Engineer</title>
+    
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --glass-bg: rgba(20, 20, 20, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --neon-purple: #bc13fe;
+            --neon-cyan: #0ff0fc;
+            --text-main: #ffffff; 
+            --text-muted: #aaaaaa;
+            --font-main: 'Segoe UI', sans-serif;
+            --font-code: 'Courier New', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #000000 100%);
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3 { 
+            font-family: var(--font-main); 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: #fff;
+        }
+        
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        section { 
+            padding: 80px 20px; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            opacity: 1; 
+            transform: translateY(0);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(5, 5, 5, 0.9);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        nav a {
+            margin: 0 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--text-muted);
+        }
+        nav a:hover { color: var(--neon-cyan); }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--neon-purple);
+            box-shadow: 0 0 40px rgba(188, 19, 254, 0.3);
+            margin-bottom: 25px;
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(188, 19, 254, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(188, 19, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(188, 19, 254, 0); }
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .hero-subtitle { 
+            font-family: var(--font-code); 
+            color: var(--neon-cyan); 
+            font-size: 1.2rem; 
+            margin-bottom: 20px; 
+        }
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(5px);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(15, 240, 252, 0.4);
+        }
+        .slider-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-behavior: smooth;
+        }
+        .mini-card {
+            min-width: 300px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .mini-card:hover { transform: translateY(-5px); border-color: var(--neon-cyan); }
+        .mini-img { height: 160px; width: 100%; background: #222; object-fit: cover; }
+        .mini-content { padding: 20px; }
+
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #111 0%, #1a1a1a 100%);
+            border-left: 4px solid var(--neon-purple);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .cert-title { font-weight: bold; font-size: 1.1rem; color: #fff; }
+        .cert-meta { color: #888; font-size: 0.9rem; margin-top: 5px; }
+        .cert-score { color: var(--neon-cyan); font-family: var(--font-code); font-weight: bold; }
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 1px solid var(--neon-purple);
+            color: var(--neon-purple);
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .btn:hover { background: var(--neon-purple); color: #fff; box-shadow: 0 0 15px var(--neon-purple); }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            border-top: 1px solid #222;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <img src="image_39b8d7.jpg" alt="Profile Photo" class="profile-pic" />
+        
+        <h1>Venkateswaran A G</h1>
+        <div class="hero-subtitle">&lt; AI Engineer /&gt;</div>
+        <p style="color: #aaa; max-width: 600px;">
+            Building intelligent systems with Python, TensorFlow, and Google ADK.
+        </p>
+    </section>
+
+    <section id="about" class="reveal">
+        <h2 class="section-title">About Me</h2>
+        <div class="glass-card">
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                I’m pursuing a <strong>B.E. in Computer Science and Engineering</strong> at New Horizon College of Engineering, Bangalore. 
+                My focus is on Artificial Intelligence, Machine Learning, and Data-Driven Development. 
+                I hold a <strong>3rd Dan Black Belt in Taekwondo</strong>, bringing discipline and precision to my code.
+            </p>
+            <div style="margin-top: 20px;">
+                <span style="color:var(--neon-cyan)">Skills:</span> Python, TensorFlow, OpenCV, Git, Data Structures
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h2 class="section-title">Flagship Project</h2>
+        <div class="glass-card" style="border-color: var(--neon-purple);">
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://via.placeholder.com/600x350/111/8a2be2?text=Chitragupta+AI" style="width:100%; border-radius:10px; border:1px solid #333;" alt="Project Image">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Chitragupta: The AI Auditor</h3>
+                    <p style="color:var(--text-muted); margin-bottom: 20px;">
+                        An autonomous multi-agent system for ethical red-teaming of LLMs using Google ADK and Gemini API. 
+                        It acts as an auditor to ensure AI safety.
+                    </p>
+                    <a href="https://github.com/Venkateswaran-A-G/Chitragupta-The-AI-Auditor" target="_blank" class="btn">View Source Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <h2 class="section-title">Mini Projects</h2>
+        <div class="slider-wrapper">
+            
+            <div class="mini-card">
+                <img src="https://via.placeholder.com/400x200/222/0ff0fc?text=Hand+Cricket" class="mini-img" alt="Game">
+                <div class="mini-content">
+                    <h3>Hand Cricket Game</h3>
+                    <p style="color:#888; font-size:0.9rem; margin:10px 0;">Text-based game with CPU logic.</p>
+                    <a href="https://github.com/Venkateswaran-A-G/Hand-Cricket-Game" target="_blank" style="color:var(--neon-cyan)">View GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="mini-card">
+                <img src="https://via.placeholder.com/400x200/222/0ff0fc?text=Expense+Manager" class="mini-img" alt="Expense">
+                <div class="mini-content">
+                    <h3>Expense CLI</h3>
+                    <p style="color:#888; font-size:0.9rem; margin:10px 0;">Track daily expenses in terminal.</p>
+                    <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/tree/main/ExpenseManagementCLI" target="_blank" style="color:var(--neon-cyan)">View GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="mini-card">
+                <img src="https://via.placeholder.com/400x200/222/0ff0fc?text=Finance+Bot" class="mini-img" alt="Finance">
+                <div class="mini-content">
+                    <h3>Finance Assistant</h3>
+                    <p style="color:#888; font-size:0.9rem; margin:10px 0;">Savings calculator and budgeter.</p>
+                    <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/blob/main/PersonalFinanceAssitant.py" target="_blank" style="color:var(--neon-cyan)">View GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="mini-card">
+                <img src="https://via.placeholder.com/400x200/222/0ff0fc?text=Student+System" class="mini-img" alt="Student">
+                <div class="mini-content">
+                    <h3>Student Mgmt</h3>
+                    <p style="color:#888; font-size:0.9rem; margin:10px 0;">CRUD system for records.</p>
+                    <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/tree/main/StudentManagementCLI" target="_blank" style="color:var(--neon-cyan)">View GitHub &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="reveal">
+        <h2 class="section-title">Certifications</h2>
+        <div class="glass-card">
+            
+            <div class="cert-item">
+                <div>
+                    <div class="cert-title">Git Training</div>
+                    <div class="cert-meta">Spoken Tutorial Project, IIT Bombay</div>
+                    <div class="cert-meta">Date: 12 November 2025</div>
+                </div>
+                <div class="cert-score">76.67%</div>
+            </div>
+
+            <div class="cert-item">
+                <div>
+                    <div class="cert-title">Learn Python 3 Course</div>
+                    <div class="cert-meta">Codecademy</div>
+                    <div class="cert-meta">Date: October 2, 2025</div>
+                </div>
+                <div class="cert-score">COMPLETED</div>
+            </div>
+
+            <div class="cert-item">
+                <div>
+                    <div class="cert-title">3rd Dan Black Belt</div>
+                    <div class="cert-meta">Taekwondo Federation</div>
+                </div>
+                <div class="cert-score">RANKED</div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h3>Let's Connect</h3>
+        <p style="margin: 20px 0;">
+            <a href="mailto:venkateswaranag20@gmail.com" style="margin:0 15px; color:#fff;">Email Me</a>
+            <a href="https://github.com/Venkateswaran-A-G" target="_blank" style="margin:0 15px; color:#fff;">GitHub</a>
+            <a href="https://www.linkedin.com/in/venkateswaran-a-g-a2a18a339" target="_blank" style="margin:0 15px; color:#fff;">LinkedIn</a>
+        </p>
+        <p style="font-size:0.8rem;">&copy; 2025 Venkateswaran A G</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add("active");
+                    } else {
+                        // Optional: remove class to animate out again
+                        // reveal.classList.remove("active");
+                    }
+                });
+            };
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll();
+        });
+    </script>
+</body>
+</html>
