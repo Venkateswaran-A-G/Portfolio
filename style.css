@@ -17,80 +17,54 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-main);
-    overflow-x: hidden;
-    /* Subtle background gradient */
+    /* No body scroll hidden - let the page handle it */
+}
+
+/* --- 2. SPLIT LAYOUT STRUCTURE --- */
+.split-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* LEFT PANEL (FIXED) */
+.left-panel {
+    width: 40%;
+    height: 100vh;
+    position: sticky; /* This makes it fixed while right side scrolls */
+    top: 0;
+    background: radial-gradient(circle at center, #1f242e 0%, #050505 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--glass-border);
+    padding: 40px;
+    z-index: 10;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+/* RIGHT PANEL (SCROLLABLE) */
+.right-panel {
+    width: 60%;
+    background-color: var(--bg-dark);
+    padding: 60px 40px;
+    /* Optional: Subtle pattern for right side */
     background-image: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #000000 100%);
     background-attachment: fixed;
 }
 
-h1, h2, h3 { 
-    font-family: var(--font-main); 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    color: #fff;
-}
-
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-
-/* --- 2. LAYOUT & SECTIONS --- */
-section { 
-    padding: 80px 20px; 
-    max-width: 1100px; 
-    margin: 0 auto; 
-}
-
-/* Scroll Animation Classes */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* --- 3. NAVIGATION --- */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(5, 5, 5, 0.9);
-    border-bottom: 1px solid var(--glass-border);
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-}
-nav a {
-    margin: 0 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--text-muted);
-}
-nav a:hover { color: var(--neon-cyan); }
-
-/* --- 4. HERO SECTION --- */
-.hero {
-    min-height: 100vh; /* Full screen height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 60px;
-}
+/* --- 3. COMPONENTS --- */
 
 .profile-pic {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--neon-purple);
-    box-shadow: 0 0 40px rgba(188, 19, 254, 0.3);
-    margin-bottom: 25px;
+    box-shadow: 0 0 30px rgba(188, 19, 254, 0.3);
+    margin-bottom: 20px;
     animation: pulse 3s infinite;
 }
 @keyframes pulse {
@@ -99,40 +73,75 @@ nav a:hover { color: var(--neon-cyan); }
     100% { box-shadow: 0 0 0 0 rgba(188, 19, 254, 0); }
 }
 
-.hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
-.hero-subtitle { 
-    font-family: var(--font-code); 
-    color: var(--neon-cyan); 
-    font-size: 1.2rem; 
-    margin-bottom: 20px; 
+h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+.hero-subtitle { font-family: var(--font-code); color: var(--neon-cyan); font-size: 1.1rem; }
+
+/* SIDE NAV */
+.side-nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.side-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.side-nav a:hover {
+    color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    background: rgba(15, 240, 252, 0.05);
 }
 
-/* --- 5. CARDS (Glassmorphism) --- */
+.social-links { margin-top: 30px; }
+.social-links a { margin: 0 10px; color: #fff; font-size: 0.9rem; text-decoration: none; border-bottom: 1px dotted #666; }
+
+/* --- 4. RIGHT PANEL CONTENT --- */
+section { margin-bottom: 80px; }
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    border-left: 5px solid var(--neon-purple);
+    padding-left: 15px;
+}
+
 .glass-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 15px;
     padding: 30px;
     backdrop-filter: blur(5px);
-    margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 50px;
-    color: var(--neon-cyan);
-    text-shadow: 0 0 10px rgba(15, 240, 252, 0.4);
+.skill-tag {
+    display: inline-block;
+    background: #222;
+    color: var(--neon-purple);
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: var(--font-code);
 }
 
-/* --- 6. MINI PROJECTS (GRID LAYOUT) --- */
+.project-img-large { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+/* MINI GRID */
 .mini-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive Grid */
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
-
 .mini-card {
     background: #111;
     border: 1px solid #333;
@@ -140,51 +149,49 @@ nav a:hover { color: var(--neon-cyan); }
     overflow: hidden;
     transition: transform 0.3s;
 }
-.mini-card:hover { 
-    transform: translateY(-5px); 
-    border-color: var(--neon-cyan); 
-}
-.mini-img { 
-    height: 160px; 
-    width: 100%; 
-    background: #222; 
-    object-fit: cover; 
-}
-.mini-content { padding: 20px; }
-.mini-desc { color: #888; font-size: 0.9rem; margin: 10px 0; }
-.link-text { color: var(--neon-cyan); font-weight: bold; font-size: 0.9rem; }
+.mini-card:hover { transform: translateY(-5px); border-color: var(--neon-cyan); }
+.mini-img { height: 120px; width: 100%; object-fit: cover; }
+.mini-content { padding: 15px; }
+.mini-desc { font-size: 0.8rem; color: #888; margin: 5px 0 10px 0; }
+.link-text { color: var(--neon-cyan); font-size: 0.8rem; text-decoration: none; font-weight: bold; }
 
-/* --- 7. CERTIFICATIONS --- */
+/* CERT ITEMS */
 .cert-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, #111 0%, #1a1a1a 100%);
-    border-left: 4px solid var(--neon-purple);
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 0 8px 8px 0;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 3px solid var(--neon-cyan);
 }
-.cert-title { font-weight: bold; font-size: 1.1rem; color: #fff; }
-.cert-meta { color: #888; font-size: 0.9rem; margin-top: 5px; }
-.cert-score { color: var(--neon-cyan); font-family: var(--font-code); font-weight: bold; }
+.cert-title { font-weight: bold; color: #fff; }
+.cert-meta { font-size: 0.85rem; color: #aaa; }
 
-/* --- 8. BUTTONS & FOOTER --- */
 .btn {
     display: inline-block;
-    padding: 10px 25px;
-    border: 1px solid var(--neon-purple);
-    color: var(--neon-purple);
+    padding: 10px 20px;
+    background: var(--neon-purple);
+    color: #fff;
+    text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    margin-top: 15px;
+    font-size: 0.9rem;
 }
-.btn:hover { background: var(--neon-purple); color: #fff; box-shadow: 0 0 15px var(--neon-purple); }
 
-footer {
-    text-align: center;
-    padding: 50px;
-    border-top: 1px solid #222;
-    color: #666;
+/* --- 5. RESPONSIVE (STACK ON MOBILE) --- */
+@media (max-width: 900px) {
+    .split-layout { flex-direction: column; }
+    .left-panel {
+        width: 100%;
+        height: auto;
+        position: relative; /* Unstick it on mobile */
+        padding: 60px 20px;
+    }
+    .right-panel {
+        width: 100%;
+        padding: 40px 20px;
+    }
 }
-footer a { margin: 0 10px; color: #fff; }
+
+/* ANIMATION CLASS */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
