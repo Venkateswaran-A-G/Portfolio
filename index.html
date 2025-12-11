@@ -8,140 +8,132 @@
 </head>
 <body>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#certs">Certifications</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="split-layout">
+        
+        <aside class="left-panel">
+            <div class="hero-content">
+                <img src="profile.png" alt="Profile Photo" class="profile-pic" />
+                <h1>Venkateswaran A G</h1>
+                <div class="hero-subtitle">Aspiring AI Engineer</div>
+                <p style="color: #aaa; margin: 20px 0; font-size: 0.9rem;">
+                    Building the Future, One Line of Code at a Time.<br>
+                    CSE 2nd Year | Tech Enthusiast
+                </p>
 
-    <section class="hero">
-        <img src="profile.png" alt="Profile Photo" class="profile-pic" />
-        <h1>Venkateswaran A G</h1>
-        <div class="hero-subtitle">Aspiring AI Engineer</div>
-        <p style="color: #aaa; max-width: 700px; margin-top: 20px;">
-            Building the Future, One Line of Code at a Time | CSE 2nd year undergrad | Tech Enthusiast
-        </p>
-    </section>
+                <nav class="side-nav">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certs">Certifications</a>
+                    <a href="#contact">Contact</a>
+                </nav>
 
-    <section id="about" class="reveal">
-        <h2 class="section-title">About Me</h2>
-        <div class="glass-card">
-            <p style="font-size: 1.1rem; line-height: 1.8;">
-                I’m pursuing a <strong>B.E. in Computer Science and Engineering</strong> at New Horizon College of Engineering, Bangalore. 
-                My focus is on Artificial Intelligence, Machine Learning, and Data-Driven Development. 
-                I hold a <strong>3rd Dan Black Belt in Taekwondo</strong>, bringing discipline and precision to my code.
-            </p>
-            <div style="margin-top: 20px;">
-                <span style="color:var(--neon-cyan)">Skills:</span> Python, TensorFlow, OpenCV, Git, Data Structures
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="reveal">
-        <h2 class="section-title">Flagship Project</h2>
-        <div class="glass-card" style="border-color: var(--neon-purple);">
-            <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
-                <div style="flex: 1; min-width: 300px;">
-                    <img src="5.png" style="width:100%; border-radius:10px; border:1px solid #333;" alt="Chitragupta Project">
+                <div class="social-links">
+                    <a href="https://github.com/Venkateswaran-A-G" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/venkateswaran-a-g-a2a18a339" target="_blank">LinkedIn</a>
                 </div>
-                <div style="flex: 1; min-width: 300px;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Chitragupta: The AI Auditor</h3>
-                    <p style="color:var(--text-muted); margin-bottom: 20px;">
+            </div>
+        </aside>
+
+        <main class="right-panel">
+            
+            <section id="about" class="reveal">
+                <h2 class="section-title">About Me</h2>
+                <div class="glass-card">
+                    <p>
+                        I’m pursuing a <strong>B.E. in Computer Science and Engineering</strong> at New Horizon College of Engineering, Bangalore. 
+                        My focus is on Artificial Intelligence, Machine Learning, and Data-Driven Development. 
+                        I hold a <strong>3rd Dan Black Belt in Taekwondo</strong>, bringing discipline and precision to my code.
+                    </p>
+                    <div style="margin-top: 20px;">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="reveal">
+                <h2 class="section-title">Flagship Project</h2>
+                <div class="glass-card" style="border-color: var(--neon-purple);">
+                    <img src="5.png" class="project-img-large" alt="Chitragupta Project">
+                    <h3 style="font-size: 1.5rem; margin: 15px 0;">Chitragupta: The AI Auditor</h3>
+                    <p style="color:#aaa; margin-bottom: 20px;">
                         An autonomous multi-agent system for ethical red-teaming of LLMs using Google ADK and Gemini API. 
                         It acts as an auditor to ensure AI safety.
                     </p>
                     <a href="https://github.com/Venkateswaran-A-G/Chitragupta-The-AI-Auditor" target="_blank" class="btn">View Source Code</a>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section class="reveal">
-        <h2 class="section-title">Mini Projects</h2>
-        <div class="mini-grid">
-            
-            <div class="mini-card">
-                <img src="1.png" class="mini-img" alt="Hand Cricket">
-                <div class="mini-content">
-                    <h3>Hand Cricket Game</h3>
-                    <p class="mini-desc">Text-based game with CPU logic.</p>
-                    <a href="https://github.com/Venkateswaran-A-G/Hand-Cricket-Game" target="_blank" class="link-text">View GitHub &rarr;</a>
+            <section class="reveal">
+                <h2 class="section-title">Mini Projects</h2>
+                <div class="mini-grid">
+                    <div class="mini-card">
+                        <img src="1.png" class="mini-img" alt="Hand Cricket">
+                        <div class="mini-content">
+                            <h3>Hand Cricket</h3>
+                            <p class="mini-desc">Text-based game with CPU logic.</p>
+                            <a href="https://github.com/Venkateswaran-A-G/Hand-Cricket-Game" target="_blank" class="link-text">GitHub &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <img src="4.png" class="mini-img" alt="Expense CLI">
+                        <div class="mini-content">
+                            <h3>Expense CLI</h3>
+                            <p class="mini-desc">Track daily expenses in terminal.</p>
+                            <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/tree/main/ExpenseManagementCLI" target="_blank" class="link-text">GitHub &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <img src="3.png" class="mini-img" alt="Finance">
+                        <div class="mini-content">
+                            <h3>Finance Asst.</h3>
+                            <p class="mini-desc">Savings calculator.</p>
+                            <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/blob/main/PersonalFinanceAssitant.py" target="_blank" class="link-text">GitHub &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <img src="2.png" class="mini-img" alt="Student Mgmt">
+                        <div class="mini-content">
+                            <h3>Student Mgmt</h3>
+                            <p class="mini-desc">CRUD system for records.</p>
+                            <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/tree/main/StudentManagementCLI" target="_blank" class="link-text">GitHub &rarr;</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="mini-card">
-                <img src="4.png" class="mini-img" alt="Expense CLI">
-                <div class="mini-content">
-                    <h3>Expense CLI</h3>
-                    <p class="mini-desc">Track daily expenses in terminal.</p>
-                    <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/tree/main/ExpenseManagementCLI" target="_blank" class="link-text">View GitHub &rarr;</a>
+            <section id="certs" class="reveal">
+                <h2 class="section-title">Certifications</h2>
+                <div class="glass-card">
+                    <div class="cert-item">
+                        <div>
+                            <div class="cert-title">Git Training</div>
+                            <div class="cert-meta">IIT Bombay (76.67%)</div>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div>
+                            <div class="cert-title">Python 3 Course</div>
+                            <div class="cert-meta">Codecademy</div>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div>
+                            <div class="cert-title">3rd Dan Black Belt</div>
+                            <div class="cert-meta">Taekwondo Federation</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="mini-card">
-                <img src="3.png" class="mini-img" alt="Finance Assistant">
-                <div class="mini-content">
-                    <h3>Finance Assistant</h3>
-                    <p class="mini-desc">Savings calculator and budgeter.</p>
-                    <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/blob/main/PersonalFinanceAssitant.py" target="_blank" class="link-text">View GitHub &rarr;</a>
-                </div>
-            </div>
+            <footer id="contact">
+                <p>&copy; 2025 Venkateswaran A G<br>venkateswaranag20@gmail.com</p>
+            </footer>
 
-            <div class="mini-card">
-                <img src="2.png" class="mini-img" alt="Student Management">
-                <div class="mini-content">
-                    <h3>Student Mgmt</h3>
-                    <p class="mini-desc">CRUD system for records.</p>
-                    <a href="https://github.com/Venkateswaran-A-G/Mini_Python_Projects/tree/main/StudentManagementCLI" target="_blank" class="link-text">View GitHub &rarr;</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="certs" class="reveal">
-        <h2 class="section-title">Certifications</h2>
-        <div class="glass-card">
-            
-            <div class="cert-item">
-                <div>
-                    <div class="cert-title">Git Training</div>
-                    <div class="cert-meta">Spoken Tutorial Project, IIT Bombay</div>
-                    <div class="cert-meta">Date: 12 November 2025</div>
-                </div>
-                <div class="cert-score">76.67%</div>
-            </div>
-
-            <div class="cert-item">
-                <div>
-                    <div class="cert-title">Learn Python 3 Course</div>
-                    <div class="cert-meta">Codecademy</div>
-                    <div class="cert-meta">Date: October 2, 2025</div>
-                </div>
-                <div class="cert-score">COMPLETED</div>
-            </div>
-
-            <div class="cert-item">
-                <div>
-                    <div class="cert-title">3rd Dan Black Belt</div>
-                    <div class="cert-meta">Taekwondo Federation</div>
-                </div>
-                <div class="cert-score">RANKED</div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer id="contact">
-        <h3>Let's Connect</h3>
-        <p style="margin: 20px 0;">
-            <a href="mailto:venkateswaranag20@gmail.com">Email Me</a>
-            <a href="https://github.com/Venkateswaran-A-G" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/venkateswaran-a-g-a2a18a339" target="_blank">LinkedIn</a>
-        </p>
-        <p style="font-size:0.8rem;">&copy; 2025 Venkateswaran A G</p>
-    </footer>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
